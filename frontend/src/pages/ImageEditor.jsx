@@ -3,6 +3,10 @@ import { useParams, useNavigate } from 'react-router-dom'
 import api from '../services/api'
 import './ImageEditor.css'
 
+const backendUrl = import.meta.env.VITE_API_URL
+    ? import.meta.env.VITE_API_URL.replace('/api', '')
+    : 'http://localhost:5000'
+
 function downsamplePoints(points, target) {
     if (points.length <= target) return points
 
@@ -98,7 +102,7 @@ function ImageEditor() {
             </div>
 
             <div className="canvas-wrapper">
-                <img src={`http://localhost:5000${image.filePath}`} alt={image.originalName} />
+                <img src={`${backendUrl}${image.filePath}`} alt={image.originalName} />
 
                 <svg
                     className="border-overlay"
