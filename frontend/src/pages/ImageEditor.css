@@ -1,0 +1,53 @@
+.editor-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.editor-header div button {
+    margin-left: 8px;
+}
+
+.canvas-wrapper {
+     user-select: none;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+.canvas-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.border-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.border-point {
+    fill: red;
+    cursor: pointer;
+}
+
+.editor-hint {
+    color: #777;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.save-status {
+    margin-left: 12px;
+    color: green;
+}
