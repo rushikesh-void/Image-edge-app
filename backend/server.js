@@ -1,7 +1,8 @@
 const express = require('express')
 const dotenv = require('dotenv')
 const cors = require('cors')
-const path = require ('path')
+const path = require('path')
+const fs = require('fs')
 const connectDB = require('./config/db')
 
 
@@ -9,6 +10,11 @@ dotenv.config()
 connectDB()
 
 const app = express()
+
+const uploadsDir = path.join(__dirname, 'uploads')
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir)
+}
 
 app.use(cors())
 app.use(express.json())
